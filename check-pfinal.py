@@ -7,6 +7,8 @@ Script de comprobación de entrega de práctica
 Para ejecutarlo, desde la shell:
  $ python check-pfinal.py login_github
 
+ Comprobando que el comit se hace adecuadamente.
+
 """
 
 import os
