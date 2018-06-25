@@ -75,7 +75,7 @@ if __name__ == "__main__":
             templateSDP = "Content-Type: application/sdp\r\n\r\n" + "v=0\r\n" \
                         + "o=" + str(config_data['account']['username']) + \
                         " " + str(config_data['uaserver']['ip']) + \
-                        "\r\ns=LaMesa\r\n" + "t=0\r\nm=audio " + \
+                        "\r\ns=PhysicalPing\r\n" + "t=0\r\nm=audio " + \
                         str(config_data['rtpaudio']['puerto']) + " RTP\r\n\r\n"
             line = METHOD + ' sip:' + OPTION + ' SIP/2.0\r\n' + templateSDP
             print('\nSENT:\n' + line)

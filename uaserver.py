@@ -64,7 +64,7 @@ class SIPServerHandler(socketserver.DatagramRequestHandler):
             templateSDP = "Content-Type: application/sdp\r\n\r\n" + \
                 "v=0\r\n" + "o=" + str(config_data['account']['username']) + \
                 " " + str(config_data['uaserver']['ip']) + \
-                "\r\ns=LaMesa\r\n" + "t=0\r\nm=audio " + \
+                "\r\ns=PhysicalPing\r\n" + "t=0\r\nm=audio " + \
                 str(config_data['rtpaudio']['puerto']) + " RTP\r\n\r\n"
             self.wfile.write(bytes(templateSIP + templateSDP, 'utf-8'))
             info = templateSIP + templateSDP
@@ -75,15 +75,21 @@ class SIPServerHandler(socketserver.DatagramRequestHandler):
             info = 'Received from ' + ip + ':' + \
                     str(port) + ': ' + literal.replace('\r\n', ' ')
             reg(info,config_data)
-            # FALTA POR HACER EL ENVIO RTP
+            # INTENTAR CAMBIAR ESTO A POR HILOS
+            os.system("./mp32rtp -i " + self.rtp_data[1] + " -p " +
+                    self.rtp_data[2] + " < " +
+                    config_data['audio']['path'])
 
             info = 'Sent to ' + self.rtp_data[1] + ':' + \
                 self.rtp_data[2] + ': ' + \
                 config_data['audio']['path'] + ' (audio file)'
             reg(info,config_data)
-
-            # FALTA POR HACER EL ENVIO RTP
+            # INTENTAR CAMBIAR ESTO A POR HILOS
+            cmd = 'cvlc rtp://@' + config_data['uaserver']['ip'] + \
+                  ':' + config_data['rtpaudio']['puerto']
+            os.system(cmd)
             self.rtp_data = []
+
         elif line[0] == 'BYE':
             sent_msg = 'SIP/2.0 200 OK\r\n\r\n'
             self.wfile.write(bytes(sent_msg, 'utf-8'))
@@ -116,7 +122,7 @@ if __name__ == "__main__":
     #print(config_data)
     port = int(config_data['uaserver']['puerto'])
     serv = socketserver.UDPServer(('', port), SIPServerHandler)
-    reg('Starting User Agent Server', config_data)
+    reg('Starting...', config_data)
     print("Listening...\n")
     try:
         serv.serve_forever()
