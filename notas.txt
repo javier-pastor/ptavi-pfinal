@@ -1,0 +1,2 @@
+De momento no tengo implementado el (c)vlc mediante hilos, de momento se hace
+manualmente, próximamente mediante hilos.

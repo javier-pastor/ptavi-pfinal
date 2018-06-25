@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <account username="desmond@lost.org"  passwd="4815162342" />
+    <uaserver ip="127.0.0.1" puerto="1500" />
+    <rtpaudio puerto="7777" />
+    <regproxy ip="127.0.0.1" puerto="8888" />
+    <log path="ua1_log.txt" />
+    <audio path="cancion.mp3" />
+</config>

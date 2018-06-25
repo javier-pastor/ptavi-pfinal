@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <server   name="DharmaProxy" ip="127.0.0.1" puerto="8888"/>
+  <database path="registered_users.json" passwdpath="passwords"/>
+  <log      path="pr_log.txt"/>
+</config>

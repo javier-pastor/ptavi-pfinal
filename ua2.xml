@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <account username="locke@lost.org"  passwd="4815162342" />
+    <uaserver ip="127.0.0.1" puerto="2000" />
+    <rtpaudio puerto="6666" />
+    <regproxy ip="127.0.0.1" puerto="8888" />
+    <log path="ua2_log.txt" />
+    <audio path="cancion.mp3" />
+</config>
