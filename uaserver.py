@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-"""Programa User Agent Server (+ XML Handler + SIP Handler) que abre sesion SIP."""
+"""
+Programa User Agent Server (+ XML Handler + SIP Handler) que abre sesion SIP.
+"""
 
 import socketserver
 import socket
@@ -19,8 +21,9 @@ class XmlHandler(ContentHandler):
 
     def startElement(self, name, attrs):
         exist_atts = ['username', 'passwd', 'ip', 'puerto', 'path']
-        exist_tags = ['account', 'uaserver', 'regproxy', 'rtpaudio',
-                     'log', 'audio']
+        exist_tags = [
+                        'account', 'uaserver', 'regproxy', 'rtpaudio',
+                        'log', 'audio']
         for tag in exist_tags:
             if name == tag:
                 atts_dic = {}
@@ -41,6 +44,7 @@ def reg(line_to_write, config_data):
         log_file.write(line_to_write)
         log_file.close()
 
+
 class SIPServerHandler(socketserver.DatagramRequestHandler):
 
     rtp_data = []
@@ -51,7 +55,7 @@ class SIPServerHandler(socketserver.DatagramRequestHandler):
         ip = self.client_address[0]
         port = self.client_address[1]
         info = 'Received from ' + ip + ':' + \
-                str(port) + ': ' + literal.replace('\r\n', ' ')
+            str(port) + ': ' + literal.replace('\r\n', ' ')
         reg(info, config_data)
         print('>>Recibido:\n' + literal)
         if line[0] == 'INVITE':
@@ -70,20 +74,21 @@ class SIPServerHandler(socketserver.DatagramRequestHandler):
             info = templateSIP + templateSDP
             info = 'Sent to ' + ip + ':' + \
                 str(port) + ': ' + info.replace('\r\n', ' ')
-            reg(info,config_data)
+            reg(info, config_data)
         elif line[0] == 'ACK':
             info = 'Received from ' + ip + ':' + \
                     str(port) + ': ' + literal.replace('\r\n', ' ')
-            reg(info,config_data)
+            reg(info, config_data)
             # INTENTAR CAMBIAR ESTO A POR HILOS
-            os.system("./mp32rtp -i " + self.rtp_data[1] + " -p " +
-                    self.rtp_data[2] + " < " +
-                    config_data['audio']['path'])
+            os.system(
+                        "./mp32rtp -i " + self.rtp_data[1] + " -p " +
+                        self.rtp_data[2] + " < " +
+                        config_data['audio']['path'])
 
             info = 'Sent to ' + self.rtp_data[1] + ':' + \
                 self.rtp_data[2] + ': ' + \
                 config_data['audio']['path'] + ' (audio file)'
-            reg(info,config_data)
+            reg(info, config_data)
             # INTENTAR CAMBIAR ESTO A POR HILOS
             cmd = 'cvlc rtp://@' + config_data['uaserver']['ip'] + \
                   ':' + config_data['rtpaudio']['puerto']
@@ -118,8 +123,7 @@ if __name__ == "__main__":
     parser.setContentHandler(cHandler)
     parser.parse(open(CONFIG))
     config_data = cHandler.get_tags()
-    #print("config_data es esto\n")
-    #print(config_data)
+    # print(config_data)
     port = int(config_data['uaserver']['puerto'])
     serv = socketserver.UDPServer(('', port), SIPServerHandler)
     reg('Starting...', config_data)

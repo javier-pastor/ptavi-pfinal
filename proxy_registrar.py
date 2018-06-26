@@ -33,9 +33,9 @@ class ProxyXmlHandler(ContentHandler):
                         atts_dic[str(att)] = attrs.get(str(att), "")
                 self.tags[str(name)] = atts_dic
 
-
     def get_tags(self):
         return self.tags
+
 
 class SIPHandler(socketserver.DatagramRequestHandler):
     """Register server class"""
@@ -82,8 +82,9 @@ class SIPHandler(socketserver.DatagramRequestHandler):
         """If the client expired, put it in the expired list"""
         expired = []
         for client in self.clients:
-            date = time.strftime('%Y-%m-%d %H:%M:%S',
-                                time.localtime(time.time()))
+            date = time.strftime(
+                                    '%Y-%m-%d %H:%M:%S',
+                                    time.localtime(time.time()))
             if date >= self.clients[client][2]:
                 expired.append(client)
         for client in expired:
@@ -104,7 +105,7 @@ class SIPHandler(socketserver.DatagramRequestHandler):
             if not ack:
                 answer = my_socket.recv(1024).decode('utf-8')
                 info = 'Received from ' + ip_sock + ':' + str(p_sock) + \
-                        ': ' + answer.replace('\r\n', ' ')
+                    ': ' + answer.replace('\r\n', ' ')
                 reg(info, config_data)
             else:
                 answer = ''
