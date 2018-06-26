@@ -41,3 +41,96 @@
 20180625124106 Sent to 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="57701294137460004847"  
 20180625124106 Received from 127.0.0.1:8888: SIP/2.0 200 OK  
 20180625124106 Closing socket
+20180626161648 Sent to 127.0.0.1:8888: REGISTER sip:desmond@lost.org:1500 SIP/2.0 Expires: 3600
+20180626161648 Error: No server listening at 127.0.0.1 port 8888
+20180626161909 Starting...
+20180626162005 Sent to 127.0.0.1:8888: REGISTER sip:desmond@lost.org:1500 SIP/2.0 Expires: 3600
+20180626162005 Received from 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="94251533351240558530"  
+20180626162005 Sent to 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="94251533351240558530"  
+20180626162005 Received from 127.0.0.1:8888: SIP/2.0 200 OK  
+20180626162005 Closing socket
+20180626162042 Sent to 127.0.0.1:8888: REGISTER sip:desmond@lost.org:1500 SIP/2.0 Expires: 0
+20180626162042 Received from 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="94251533351240558530"  
+20180626162042 Sent to 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="94251533351240558530"  
+20180626162042 Received from 127.0.0.1:8888: SIP/2.0 200 OK  
+20180626162042 Closing socket
+20180626162053 Finishing.
+20180626162345 Starting...
+20180626162427 Sent to 127.0.0.1:8888: REGISTER sip:desmond@lost.org:1500 SIP/2.0 Expires: 3600
+20180626162427 Received from 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="39960780708023075068"  
+20180626162427 Sent to 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="39960780708023075068"  
+20180626162427 Received from 127.0.0.1:8888: SIP/2.0 200 OK  
+20180626162427 Closing socket
+20180626162449 Sent to 127.0.0.1:8888: INVITE sip:locke@lost.org SIP/2.0 Content-Type: application/sdp  v=0 o=desmond@lost.org 127.0.0.1 s=PhysicalPing t=0 m=audio 7777 RTP  
+20180626162449 Received from 127.0.0.1:8888: 
+20180626162449 Closing socket
+20180626162725 Sent to 127.0.0.1:8888: BYE sip:locke@lost.org SIP/2.0 
+20180626162725 Received from 127.0.0.1:8888: 
+20180626162725 Closing socket
+20180626162922 Sent to 127.0.0.1:8888: REGISTER sip:desmond@lost.org:1500 SIP/2.0 Expires: 0
+20180626162922 Received from 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="39960780708023075068"  
+20180626162922 Sent to 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="39960780708023075068"  
+20180626162922 Received from 127.0.0.1:8888: SIP/2.0 200 OK  
+20180626162922 Closing socket
+20180626164109 Finishing.
+20180626164114 Starting...
+20180626164125 Sent to 127.0.0.1:8888: REGISTER sip:desmond@lost.org:1500 SIP/2.0 Expires: 0
+20180626164125 Error: No server listening at 127.0.0.1 port 8888
+20180626164131 Sent to 127.0.0.1:8888: REGISTER sip:desmond@lost.org:1500 SIP/2.0 Expires: 2600
+20180626164131 Error: No server listening at 127.0.0.1 port 8888
+20180626164153 Sent to 127.0.0.1:8888: REGISTER sip:desmond@lost.org:1500 SIP/2.0 Expires: 3600
+20180626164153 Received from 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="76332662696631967802"  
+20180626164153 Sent to 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="76332662696631967802"  
+20180626164153 Received from 127.0.0.1:8888: SIP/2.0 200 OK  
+20180626164153 Closing socket
+20180626164210 Sent to 127.0.0.1:8888: INVITE sip:locke@lost.org SIP/2.0 Content-Type: application/sdp  v=0 o=desmond@lost.org 127.0.0.1 s=PhysicalPing t=0 m=audio 7777 RTP  
+20180626164210 Received from 127.0.0.1:8888: SIP/2.0 100 Trying  SIP/2.0 180 Ring  SIP/2.0 200 OK  Content-Type: application/sdp  v=0 o=locke@lost.org 127.0.0.1 s=PhysicalPing t=0 m=audio 6666 RTP  
+20180626164210 Sent to 127.0.0.1:8888: ACK sip:locke@lost.org SIP/2.0 
+20180626164424 Sent to 127.0.0.1:6666: cancion.mp3 (audio file)
+20180626164431 Closing socket
+20180626164459 Sent to 127.0.0.1:8888: BYE sip:locke@lost.org SIP/2.0 
+20180626164523 Sent to 127.0.0.1:8888: BYE sip:locke@lost.org SIP/2.0 
+20180626164606 Sent to 127.0.0.1:8888: REGISTER sip:desmond@lost.org:1500 SIP/2.0 Expires: 0
+20180626164618 Received from 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="76332662696631967802"  
+20180626164618 Sent to 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="76332662696631967802"  
+20180626164618 Received from 127.0.0.1:8888: SIP/2.0 200 OK  
+20180626164618 Closing socket
+20180626164624 Sent to 127.0.0.1:8888: BYE sip:locke@lost.org SIP/2.0 
+20180626164624 Received from 127.0.0.1:8888: SIP/2.0 200 OK  
+20180626164624 Closing socket
+20180626164626 Sent to 127.0.0.1:8888: REGISTER sip:desmond@lost.org:1500 SIP/2.0 Expires: 0
+20180626164626 Received from 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="76332662696631967802"  
+20180626164626 Sent to 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="76332662696631967802"  
+20180626164626 Received from 127.0.0.1:8888: SIP/2.0 200 OK  
+20180626164626 Closing socket
+20180626164917 Finishing.
+20180626164934 Starting...
+20180626164954 Sent to 127.0.0.1:8888: REGISTER sip:desmond@lost.org:1500 SIP/2.0 Expires: 3600
+20180626164954 Received from 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="89404190368747454664"  
+20180626164954 Sent to 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="89404190368747454664"  
+20180626164954 Received from 127.0.0.1:8888: SIP/2.0 200 OK  
+20180626164954 Closing socket
+20180626165007 Sent to 127.0.0.1:8888: INVITE sip:locke@lost.org SIP/2.0 Content-Type: application/sdp  v=0 o=desmond@lost.org 127.0.0.1 s=PhysicalPing t=0 m=audio 7777 RTP  
+20180626165007 Received from 127.0.0.1:8888: SIP/2.0 100 Trying  SIP/2.0 180 Ring  SIP/2.0 200 OK  Content-Type: application/sdp  v=0 o=locke@lost.org 127.0.0.1 s=PhysicalPing t=0 m=audio 6666 RTP  
+20180626165007 Sent to 127.0.0.1:8888: ACK sip:locke@lost.org SIP/2.0 
+20180626165023 Sent to 127.0.0.1:6666: cancion.mp3 (audio file)
+20180626165031 Closing socket
+20180626165037 Sent to 127.0.0.1:8888: BYE sip:locke@lost.org SIP/2.0 
+20180626165039 Received from 127.0.0.1:8888: SIP/2.0 200 OK  
+20180626165039 Closing socket
+20180626165048 Sent to 127.0.0.1:8888: REGISTER sip:desmond@lost.org:1500 SIP/2.0 Expires: 0
+20180626165048 Received from 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="89404190368747454664"  
+20180626165048 Sent to 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="89404190368747454664"  
+20180626165048 Received from 127.0.0.1:8888: SIP/2.0 200 OK  
+20180626165048 Closing socket
+20180626165520 Finishing.
+20180626165702 Starting...
+20180626165712 Sent to 127.0.0.1:8888: REGISTER sip:desmond@lost.org:1500 SIP/2.0 Expires: 3600
+20180626165712 Received from 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="22006593939727225124"  
+20180626165712 Sent to 127.0.0.1:8888: SIP/2.0 401 Unauthorized WWW Authenticate: Digest nonce="22006593939727225124"  
+20180626165712 Received from 127.0.0.1:8888: SIP/2.0 200 OK  
+20180626165712 Closing socket
+20180626165721 Sent to 127.0.0.1:8888: INVITE sip:locke@lost.org SIP/2.0 Content-Type: application/sdp  v=0 o=desmond@lost.org 127.0.0.1 s=PhysicalPing t=0 m=audio 7777 RTP  
+20180626165721 Received from 127.0.0.1:8888: SIP/2.0 404 User Not Found  
+20180626165721 Closing socket
+20180626170110 Finishing.

@@ -104,13 +104,13 @@ class SIPHandler(socketserver.DatagramRequestHandler):
             if not ack:
                 answer = my_socket.recv(1024).decode('utf-8')
                 info = 'Received from ' + ip_sock + ':' + str(p_sock) + \
-                        + ': ' + answer.replace('\r\n', ' ')
+                        ': ' + answer.replace('\r\n', ' ')
                 reg(info, config_data)
             else:
                 answer = ''
         except ConnectionRefusedError:
-            info = 'Error: No server listening at ' + ip_sock + ':' \
-                    + str(p_sock)
+            info = 'Error: No server listening at ' + ip_sock + ':' + \
+                    str(p_sock)
             reg(info, config_data)
             print(event)
             answer = 'SIP/2.0 504 Server Time-out\r\n\r\n'
