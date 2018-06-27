@@ -1,2 +1,3 @@
 De momento no tengo implementado el (c)vlc mediante hilos y se hace
-manualmente, próximamente mediante hilos.
+manualmente.
+Tratar de hacer hilos y mirar si puedo mejorar la eficiencia del envío.
