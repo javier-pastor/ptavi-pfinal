@@ -128,7 +128,6 @@ if __name__ == "__main__":
             reg(info, config_data)
             print('\nRECEIVED:\n' + received)
         print('\nCLOSING THE SOCKET\n')
-        reg('Closing socket', config_data)
         my_socket.close()
     except ConnectionRefusedError:
         info = 'Error: No server listening at ' + ip + ' port ' + str(port)
