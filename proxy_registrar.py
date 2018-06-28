@@ -67,17 +67,6 @@ class SIPHandler(socketserver.DatagramRequestHandler):
                 reg = True
         return reg
 
-    def register2json(self):
-        """Print the list of clients in a json"""
-        f = open(str(config_data['database']['path']), 'w')
-        json.dump(self.clients, f, indent='\t')
-
-    def json2register(self):
-        """Check it there is json and import the clients"""
-        if os.path.isfile(str(config_data['database']['path'])):
-            with open(str(config_data['database']['path'])) as data_file:
-                self.clients = json.load(data_file)
-
     def check_expired_clients(self):
         """If the client expired, put it in the expired list"""
         expired = []
@@ -119,8 +108,6 @@ class SIPHandler(socketserver.DatagramRequestHandler):
 
     def handle(self):
 
-        # LOS HEMOS QUITADO PORQUE NOS DABAN PROBLEMAS, VER COMO HACERLO(C).
-        # self.json2register()
         literal = self.rfile.read().decode('utf-8')
         line = literal.split()
         print('RECEIVED:\n' + literal)
@@ -130,8 +117,6 @@ class SIPHandler(socketserver.DatagramRequestHandler):
             literal.replace('\r\n', ' ')
         reg(info, config_data)
         self.check_expired_clients()
-        # LOS HEMOS QUITADO PORQUE NOS DABAN PROBLEMAS, VER COMO HACERLO(C).
-        # self.register2json()
         if line[0] == 'REGISTER' and len(line) < 6:
             # --------- AUTHENTICATION ----------
             to_send = 'SIP/2.0 401 Unauthorized\r\n' + \
@@ -209,7 +194,7 @@ class SIPHandler(socketserver.DatagramRequestHandler):
                 info = 'Sent to ' + ip + ':' + str(port) + ': ' + \
                     answer.replace('\r\n', ' ')
                 reg(info, config_data)
-                print('>>Reenviando:\n' + answer)
+                print('RESENDING:\n' + answer)
             elif not user_found:
                 to_send = 'SIP/2.0 404 User Not Found\r\n\r\n'
                 self.wfile.write(bytes(to_send, 'utf-8'))
@@ -249,5 +234,5 @@ if __name__ == "__main__":
     try:
         serv.serve_forever()
     except KeyboardInterrupt:
-        print("\nFinalizado servidor")
+        print("\nENDING SERVER")
         reg('Finishing...', config_data)
